@@ -1,7 +1,7 @@
 diff --git a/WinPort/src/Backend/WinPortMain.cpp b/WinPort/src/Backend/WinPortMain.cpp
 --- a/WinPort/src/Backend/WinPortMain.cpp
 +++ b/WinPort/src/Backend/WinPortMain.cpp
-@@ -235,7 +235,7 @@ struct ArgOptions
+@@ -238,7 +238,7 @@ struct ArgOptions
  	const char *nodetect = "";
  	bool tty = false, far2l_tty = false, notty = false;
  	bool mortal = false;
@@ -19,6 +19,6 @@ diff --git a/far2l/src/cfg/ConfigSaveLoad.cpp b/far2l/src/cfg/ConfigSaveLoad.cpp
  
 -	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 0},
 +	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 1}, // by unxed: enable by default
+ 	{true,  NSecInterface, "TTYPaletteOverride", &Opt.TTYPaletteOverride, 1},
  
  	{false, NSecInterface, "ShowTimeoutDelFiles", &Opt.ShowTimeoutDelFiles, 50},
- 	{false, NSecInterface, "ShowTimeoutDACLFiles", &Opt.ShowTimeoutDACLFiles, 50},
