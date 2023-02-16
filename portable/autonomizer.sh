@@ -24,9 +24,9 @@ for file in ./**/* ; do
         xargs -d '\n' -I{} cp --copy-contents {} ./lib
         patchelf --set-rpath $str $file
         if [ ${MACHINE_TYPE} == 'i686' ]; then
-            patchelf --set-interpreter $str2/`ldconfig -p | grep "ld-linux" | awk '{print $4}' | sed "s/.*\///"` $file
+            patchelf --set-interpreter $str2/`ldconfig -p | grep "ld-linux" | head -n 1 | awk '{print $4}' | sed "s/.*\///"` $file
         else
-            patchelf --set-interpreter $str2/`ldconfig -p | grep "ld-linux-" | awk '{print $4}' | sed "s/.*\///"` $file
+            patchelf --set-interpreter $str2/`ldconfig -p | grep "ld-linux-" | head -n 1 | awk '{print $4}' | sed "s/.*\///"` $file
         fi
     fi
 done
@@ -40,7 +40,7 @@ for file in ./lib/* ; do
     fi
 done
 if [ ${MACHINE_TYPE} == 'i686' ]; then
-    cp `ldconfig -p | grep "ld-linux" | awk '{print $4}'` ./lib
+    cp `ldconfig -p | grep "ld-linux" | head -n 1 | awk '{print $4}'` ./lib
 else
-    cp `ldconfig -p | grep "ld-linux-" | awk '{print $4}'` ./lib
+    cp `ldconfig -p | grep "ld-linux-" | head -n 1 | awk '{print $4}'` ./lib
 fi
