@@ -34,4 +34,4 @@ for file in ./lib/* ; do
         #patchelf --set-rpath "." $file
     fi
 done
-cp `ldconfig -p | grep "ld-linux-" | awk '{print $4}'` ./lib
+cp `ldconfig -p | grep "ld-linux" | grep ".so.2" | awk '{print $4}'` ./lib
