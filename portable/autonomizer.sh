@@ -35,7 +35,7 @@ for file in ./lib/* ; do
     fi
 done
 MACHINE_TYPE=`uname -m`
-if [ ${MACHINE_TYPE} == 'i386' ]; then
+if [ ${MACHINE_TYPE} == 'i686' ]; then
     cp `ldconfig -p | grep "ld-linux" | awk '{print $4}'` ./lib
 else
     cp `ldconfig -p | grep "ld-linux-" | awk '{print $4}'` ./lib
