@@ -34,4 +34,9 @@ for file in ./lib/* ; do
         #patchelf --set-rpath "." $file
     fi
 done
-cp `ldconfig -p | grep "ld-linux" | grep ".so.2" | awk '{print $4}'` ./lib
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'i386' ]; then
+    cp `ldconfig -p | grep "ld-linux" | awk '{print $4}'` ./lib
+else
+    cp `ldconfig -p | grep "ld-linux-" | awk '{print $4}'` ./lib
+fi
