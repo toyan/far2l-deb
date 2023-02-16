@@ -36,7 +36,6 @@ for file in ./lib/* ; do
         echo $file
         patchelf --remove-rpath $file
         patchelf --set-rpath "\$ORIGIN" $file
-        #patchelf --set-rpath "." $file
     fi
 done
 if [ ${MACHINE_TYPE} == 'i686' ]; then
