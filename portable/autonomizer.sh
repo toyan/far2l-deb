@@ -8,25 +8,30 @@ for file in ./**/* ; do
         c="${#sl}"
         c=$(expr $c - 1)
         str="\$ORIGIN"
+        str2="."
         if [ "$c" -gt "0" ]; then
             for ((i=1; i<=$c; i++)); do
                 str="${str}/.."
+                str2="${str2}/.."
             done
         fi
         str="${str}/lib"
-        #echo $str
+        str2="${str2}/lib"
         echo $file
         patchelf --remove-rpath $file
-        #ldd $file |awk '{if(substr($3,0,1)=="/") print $1,$3}' | cut -d\  -f2 | \
         ldd $file | grep "=> /" | awk '{print $1, $3}' | cut -d\  -f2 | \
         xargs -d '\n' -I{} cp --copy-contents {} ./lib
         patchelf --set-rpath $str $file
+        patchelf --set-interpreter $str2/`ldconfig -p | grep "ld-linux-" | awk '{print $4}' | sed "s/.*\///"` $file
     fi
 done
+cp $(dirname "`ldconfig -p | grep "libnss_compat.so.2" | grep -v '/usr/' | awk '{print $8}'`")/libnss_* ./lib
 for file in ./lib/* ; do
     if file $file | grep ELF > /dev/null; then
         echo $file
         patchelf --remove-rpath $file
         patchelf --set-rpath "\$ORIGIN" $file
+        #patchelf --set-rpath "." $file
     fi
 done
+cp `ldconfig -p | grep "ld-linux-" | awk '{print $4}'` ./lib
