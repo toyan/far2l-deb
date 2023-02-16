@@ -12,7 +12,7 @@ docker build -t tmp-far2l-portable -<<END_TEXT
   ENV DEBIAN_FRONTEND noninteractive
 
   RUN apt-get update \
-    && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev libarchive-dev cmake g++ git patchelf \
+    && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
     && git clone https://github.com/elfmz/far2l \
     && cd far2l \
     && wget --no-check-certificate https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch \
@@ -26,14 +26,6 @@ docker build -t tmp-far2l-portable -<<END_TEXT
     && wget https://github.com/unxed/far2l-deb/raw/master/portable/autonomizer.sh \
     && chmod +x autonomizer.sh \
     && ./autonomizer.sh \
-    && rm lib/libc.so.6 \
-    && rm lib/libdl.so.2 \
-    && rm lib/libgcc_s.so.1 \
-    && rm lib/libm.so.6 \
-    && rm lib/libpthread.so.0 \
-    && rm lib/libstdc++.so.6 \
-    && rm lib/libresolv.so.2 \
-    && rm lib/librt.so.1 \
     && cd .. \
     && mv install far2l_portable \
     && git clone https://github.com/megastep/makeself.git \
@@ -63,7 +55,7 @@ FROM ubuntu:20.04 as builder
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
-  && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev libarchive-dev cmake g++ git patchelf \
+  && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
   && git clone https://github.com/elfmz/far2l \
   && cd far2l \
   && wget --no-check-certificate https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch \
@@ -77,14 +69,6 @@ RUN apt-get update \
   && wget https://github.com/unxed/far2l-deb/raw/master/portable/autonomizer.sh \
   && chmod +x autonomizer.sh \
   && ./autonomizer.sh \
-  && rm lib/libc.so.6 \
-  && rm lib/libdl.so.2 \
-  && rm lib/libgcc_s.so.1 \
-  && rm lib/libm.so.6 \
-  && rm lib/libpthread.so.0 \
-  && rm lib/libstdc++.so.6 \
-  && rm lib/libresolv.so.2 \
-  && rm lib/librt.so.1 \
   && cd .. \
   && mv install far2l_portable \
   && git clone https://github.com/megastep/makeself.git \
