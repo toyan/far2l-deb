@@ -30,7 +30,7 @@ for file in ./**/* ; do
         fi
     fi
 done
-cp $(dirname "`ldconfig -p | grep "libnss_compat.so.2" | grep -v '/usr/' | awk '{print $8}'`")/libnss_* ./lib
+ldconfig -p | grep "libnss_compat" | awk '{print $8}' | while read line ; do cp $(dirname "$line")/libnss_* ./lib ; done
 for file in ./lib/* ; do
     if file $file | grep ELF > /dev/null; then
         echo $file
