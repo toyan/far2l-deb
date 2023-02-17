@@ -17,9 +17,11 @@ cd build
 cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc --all)
 cd install
+wget https://github.com/unxed/far2l-deb/raw/master/portable/far2l.sh
 wget https://github.com/unxed/far2l-deb/raw/master/portable/autonomizer.sh
 chmod +x autonomizer.sh
 ./autonomizer.sh
+rm -rf autonomizer.sh
 cd ..
 mv install far2l_portable
 git clone https://github.com/megastep/makeself.git
