@@ -18,6 +18,7 @@ cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc --all)
 cd install
 wget https://github.com/unxed/far2l-deb/raw/master/portable/far2l.sh
+chmod +x far2l.sh
 wget https://github.com/unxed/far2l-deb/raw/master/portable/autonomizer.sh
 chmod +x autonomizer.sh
 ./autonomizer.sh
