@@ -30,7 +30,7 @@ for file in ./**/* ; do
         fi
     fi
 done
-ldconfig -p | grep "libnss_compat" | awk '{print $8}' | while read line ; do cp $(dirname "$line")/libnss_* ./lib ; done
+ldconfig -p | grep "libnss_compat" | awk '{print $8}' | while read line ; do cp --copy-contents $(dirname "$line")/libnss_* ./lib ; done
 for file in ./lib/* ; do
     if file $file | grep ELF > /dev/null; then
         echo $file
@@ -39,7 +39,7 @@ for file in ./lib/* ; do
     fi
 done
 if [ ${MACHINE_TYPE} == 'i686' ]; then
-    cp `ldconfig -p | grep "ld-linux" | head -n 1 | awk '{print $4}'` ./lib
+    cp --copy-contents `ldconfig -p | grep "ld-linux" | head -n 1 | awk '{print $4}'` ./lib
 else
-    cp `ldconfig -p | grep "ld-linux-" | head -n 1 | awk '{print $4}'` ./lib
+    cp --copy-contents `ldconfig -p | grep "ld-linux-" | head -n 1 | awk '{print $4}'` ./lib
 fi
