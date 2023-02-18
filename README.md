@@ -21,7 +21,7 @@ sudo dpkg -i ПАКЕТ_ДЛЯ_ВАШЕГО_ДИСТРИБУТИВА.deb
 
 misc — всякие вспомогательные скрипты, большей частью устаревшие
 
-portable — tty-версия far2l, собранная со всеми библиотеками в один исполняемый файл, пригодится на shared хостингах. Есть ограничения: отсутствует поддержка протокола SMB в NetRocks, multiarc собран без libarchive. Всё остальное — как в сборке far2l по умолчанию. Существуют [скрипты](https://github.com/sorcodiv/far2lua-build) для сборки такой же версии, только с Lua. Если у вас на хостинге не запустилась, попробуйте запускать так: `./far2l_portable.run --target ./far2l`
+portable — tty-версия far2l, собранная со всеми библиотеками в один исполняемый файл, пригодится на shared хостингах. Есть ограничение: отсутствует поддержка протокола SMB в NetRocks. Всё остальное — как в сборке far2l по умолчанию. Существуют [скрипты](https://github.com/sorcodiv/far2lua-build) для сборки такой же версии, только с Lua. Если у вас на хостинге не запустилась, попробуйте запускать так: `./far2l_portable.run --target ./far2l`
 
 themes — темы оформления интерфейса far2l
 
@@ -50,7 +50,7 @@ What else interesting is there?
 
 misc - all sorts of auxiliary scripts, mostly outdated
 
-portable - the tty version of far2l, packaged with all the libraries into one executable file, useful on shared hostings. There are limitations: no SMB protocol support in NetRocks, multiarc is built without libarchive. Everything else is the same as in the default far2l build. There are [scripts](https://github.com/sorcodiv/far2lua-build) for building the same version, but with Lua support. If it didn’t start on your hosting, try starting it like this: `./far2l_portable.run --target ./far2l`
+portable - the tty version of far2l, packaged with all the libraries into one executable file, useful on shared hostings. There is a limitation: no SMB protocol support in NetRocks. Everything else is the same as in the default far2l build. There are [scripts](https://github.com/sorcodiv/far2lua-build) for building the same version, but with Lua support. If it didn’t start on your hosting, try starting it like this: `./far2l_portable.run --target ./far2l`
 
 themes - themes for far2l UI
 
