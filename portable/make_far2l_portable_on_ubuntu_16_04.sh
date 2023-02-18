@@ -5,7 +5,7 @@ rm -rf far2l
 mkdir far2l
 cd far2l
 apt-get update
-apt-get install -y libspdlog-dev patchelf wget gawk m4 libx11-dev libxi-dev libxerces-c-dev libuchardet-dev libssh-dev libssl-dev libnfs-dev libneon27-dev libpcre3-dev cmake g++ git
+apt-get install -y libspdlog-dev patchelf wget gawk m4 libx11-dev libxi-dev libxerces-c-dev libuchardet-dev libssh-dev libssl-dev libnfs-dev libneon27-dev libarchive-dev libpcre3-dev cmake g++ git
 git clone https://github.com/elfmz/far2l
 cd far2l
 wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch
