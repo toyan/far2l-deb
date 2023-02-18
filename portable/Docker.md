@@ -12,7 +12,7 @@ docker build -t tmp-far2l-portable -<<END_TEXT
   ENV DEBIAN_FRONTEND noninteractive
 
   RUN apt-get update \
-    && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
+    && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libnss-mdns libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
     && git clone https://github.com/elfmz/far2l \
     && cd far2l \
     && wget --no-check-certificate https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch \
@@ -55,7 +55,7 @@ FROM ubuntu:20.04 as builder
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
-  && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
+  && apt-get install -y wget gawk m4 libwxgtk3.0-gtk3-dev libx11-dev libxi-dev libpcre3-dev libxerces-c-dev libspdlog-dev libuchardet-dev libnss-mdns libssh-dev libssl-dev libsmbclient-dev libnfs-dev libneon27-dev cmake g++ git patchelf \
   && git clone https://github.com/elfmz/far2l \
   && cd far2l \
   && wget --no-check-certificate https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch \
