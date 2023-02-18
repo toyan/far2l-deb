@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweak
 git apply tty_tweaks.patch
 mkdir build
 cd build
-cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
+cmake -DUSEWX=no -DFARFTP=yes -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc --all)
 cd install
 wget https://github.com/unxed/far2l-deb/raw/master/portable/far2l.sh
