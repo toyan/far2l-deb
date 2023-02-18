@@ -10,8 +10,8 @@ git clone https://github.com/elfmz/far2l
 cd far2l
 wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch
 git apply tty_tweaks.patch
-wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/portable_tweaks.patch
-git apply portable_tweaks.patch
+#wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/portable_tweaks.patch
+#git apply portable_tweaks.patch
 mkdir build
 cd build
 cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
