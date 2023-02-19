@@ -17,7 +17,7 @@ make -j$(nproc --all)
 cd install
 rm -rf far2l_askpass
 echo "#!/bin/bash" > far2l_askpass
-echo "cd \$FARHOME" >> far2l_askpass
+echo "cd \"\$FARHOME\"" >> far2l_askpass
 echo "exec -a far2l_askpass ./far2l \$*" >> far2l_askpass
 chmod +x far2l_askpass
 wget https://github.com/unxed/far2l-deb/raw/master/portable/far2l.sh
