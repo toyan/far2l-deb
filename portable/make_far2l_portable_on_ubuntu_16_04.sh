@@ -50,4 +50,4 @@ rm -rf autonomizer.sh
 cd ..
 mv install far2l_portable
 git clone https://github.com/megastep/makeself.git
-makeself/makeself.sh far2l_portable far2l_portable.run far2l ./far2l
+makeself/makeself.sh --keep-umask far2l_portable far2l_portable.run far2l ./far2l
