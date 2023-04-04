@@ -13,7 +13,7 @@ echo nameserver 1.1.1.1 | sudo lxc-attach -n far2l -- tee /run/resolvconf/resolv
 sudo lxc-attach -n far2l -- sudo apt install -y wget
 sudo lxc-attach -n far2l -- wget https://github.com/unxed/far2l-deb/raw/master/portable/make_far2l_portable_on_ubuntu_16_04.sh
 sudo lxc-attach -n far2l -- chmod +x make_far2l_portable_on_ubuntu_16_04.sh
-sudo lxc-attach -n far2l -- ./make_far2l_portable_on_ubuntu_16_04.sh
+sudo lxc-attach -n far2l -- ./make_far2l_portable_on_ubuntu_16_04.sh "$@"
 sudo chmod +r -R /var/lib/lxc/far2l
 sudo cp /var/lib/lxc/far2l/rootfs/root/far2l/far2l/build/far2l_portable.run .
 sudo lxc-stop -n far2l
