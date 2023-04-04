@@ -4,4 +4,4 @@ lxc-far2l-portable.sh
 
 on Ubuntu 22.04 to build portable far2l standalone executable far2l_portable.run
 
-PS: experimental portable version with gui backend included: https://t.me/far2l_ru/6654 (amd64 binary)
+use --gui switch if you want your build to have far2l gui rendering backend enabled (increases file size twice)
