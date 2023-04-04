@@ -4,4 +4,3 @@ lxc-far2l-portable.sh
 
 on Ubuntu 22.04 to build portable far2l standalone executable far2l_portable.run
 
-use --gui switch if you want your build to have far2l gui rendering backend enabled (increases file size twice)
