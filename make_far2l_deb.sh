@@ -62,7 +62,6 @@ echo "Terminal=false" >> deb/far2l/usr/share/applications/far2l.desktop
 echo "Categories=Utility;FileManager;" >> deb/far2l/usr/share/applications/far2l.desktop
 echo "Icon=far2l.svg" >> deb/far2l/usr/share/applications/far2l.desktop
 echo "StartupNotify=true" >> deb/far2l/usr/share/applications/far2l.desktop
-mkdir deb/far2l/usr/share
 mkdir deb/far2l/usr/share/icons
 mkdir deb/far2l/usr/share/icons/hicolor
 mkdir deb/far2l/usr/share/icons/hicolor/scalable
