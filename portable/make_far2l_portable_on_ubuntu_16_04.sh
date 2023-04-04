@@ -16,8 +16,9 @@ mkdir far2l
 cd far2l
 apt-get update
 if [ "$gui_arg_present" = true ]; then
-    sudo apt install -y libwxgtk3.0-dev
+    sudo apt install -y libwxgtk3.0-dev    
     sudo apt install -y libwxgtk3.0-gtk3-dev
+    sudo apt install -y libwxgtk3.2-dev
     sudo apt install -y libsmbclient-dev
 fi
 apt-get install -y libneon27-dev
@@ -30,7 +31,11 @@ wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/xenial_fi
 git apply xenial_fix.patch
 mkdir build
 cd build
-cmake -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
+if [ "$gui_arg_present" = true ]; then
+    cmake -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
+else
+    cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
+fi
 make -j$(nproc --all)
 cd install
 rm -rf far2l_askpass
