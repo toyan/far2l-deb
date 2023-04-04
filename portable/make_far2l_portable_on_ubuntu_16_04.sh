@@ -18,8 +18,9 @@ apt-get update
 if [ "$gui_arg_present" = true ]; then
     sudo apt install -y libwxgtk3.0-dev
     sudo apt install -y libwxgtk3.0-gtk3-dev
+    sudo apt install -y libsmbclient-dev
 fi
-apt-get install -y libneon27-dev 
+apt-get install -y libneon27-dev
 apt-get install -y libspdlog-dev patchelf wget gawk m4 libx11-dev libxi-dev libxerces-c-dev libuchardet-dev libnss-mdns libssh-dev libssl-dev libnfs-dev libarchive-dev libpcre3-dev cmake g++ git
 git clone https://github.com/elfmz/far2l
 cd far2l
