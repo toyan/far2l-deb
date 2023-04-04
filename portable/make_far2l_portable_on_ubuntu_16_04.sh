@@ -26,6 +26,8 @@ git clone https://github.com/elfmz/far2l
 cd far2l
 wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/tty_tweaks.patch
 git apply tty_tweaks.patch
+wget https://raw.githubusercontent.com/unxed/far2l-deb/master/portable/xenial_fix.patch
+git apply xenial_fix.patch
 mkdir build
 cd build
 cmake -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
