@@ -21,7 +21,7 @@ mkdir deb
 mkdir deb/far2l
 mkdir deb/far2l/DEBIAN
 echo "Package: far2l" > deb/far2l/DEBIAN/control
-echo "Version: 2.4" >> deb/far2l/DEBIAN/control
+echo "Version: 2.5" >> deb/far2l/DEBIAN/control
 MACHINE_TYPE=`uname -m`
 if [ ${MACHINE_TYPE} == 'x86_64' ]; then
     DEB_ARCH="amd64"
