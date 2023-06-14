@@ -35,6 +35,11 @@ else
     cmake -DUSEWX=no -DLEGACY=no -DCMAKE_BUILD_TYPE=Release ..
 fi
 make -j$(nproc --all)
+ret_code=$?
+if [ $ret_code -ne 0 ]; then
+    echo "make error code: $ret_code"
+    exit $ret_code
+fi
 cd install
 rm -rf far2l_askpass
 echo "#!/bin/bash" > far2l_askpass
